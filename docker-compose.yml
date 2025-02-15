@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  my-service:
+    build:
+      context: ./Dockerfile
+    image: object-detection-trt:v1.0
+    container_name: object-detection-trt
+    volumes:
+      - ./src:/workspace/src
+    working_dir: /workspace/src
+    # command: ["./main"]
+    stdin_open: true
+    tty: true
